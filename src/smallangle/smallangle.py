@@ -10,9 +10,10 @@ def main():
     pass
 
 
-# Command for Sin
 @main.command()
-@click.option("-n", "--number", default=1, help="Choose a number", show_default=True)
+@click.option(
+    "-n", "--number", default=1, help="Choose a sampling amount", show_default=True
+)
 def sin(number):
     """List input values (x) and the output values (sin(x)) with a chosen sampling amount of values of x between 0 and 2pi
 
@@ -25,9 +26,10 @@ def sin(number):
     return
 
 
-# Command for Tan
 @main.command()
-@click.option("-n", "--number", default=1, help="Choose a number", show_default=True)
+@click.option(
+    "-n", "--number", default=1, help="Choose a sampling amount", show_default=True
+)
 def tan(number):
     """List input values (x) and the output values (tan(x)) with a chosen sampling amount of values of x between 0 and 2pi
 
