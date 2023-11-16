@@ -1,9 +1,16 @@
 import click
 import numpy as np
-from numpy import pi
 import pandas as pd
+from numpy import pi
 
 
+@click.group()
+def main():
+    pass
+
+
+@main.command()
+@click.option("-n", "--number", default=1, help="Choose a number", show_default=True)
 def sin(number):
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
@@ -11,6 +18,8 @@ def sin(number):
     return
 
 
+@main.command()
+@click.option("-n", "--number", default=1, help="Choose a number", show_default=True)
 def tan(number):
     x = np.linspace(0, 2 * pi, number)
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
@@ -19,4 +28,4 @@ def tan(number):
 
 
 if __name__ == "__main__":
-    sin(10)
+    main()
