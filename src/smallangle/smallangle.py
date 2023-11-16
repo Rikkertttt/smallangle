@@ -42,5 +42,24 @@ def tan(number):
     return
 
 
+@main.command()
+@click.option(
+    "-a", "--accuracy", default=0.1, help="Choose an accuracy", show_default=True
+)
+def approx(accuracy):
+    """Give the upper limit of the small angle approximation for a chosen angle.
+
+    Args:
+        accuracy (int): accuracy
+    """
+    x = 0
+    while abs(x - np.sin(x)) <= accuracy:
+        x += 0.001
+    print(
+        f"For an accuracy of {accuracy}, the small-angle approximation holds up to x = {round(x, 3)}."
+    )
+    return
+
+
 if __name__ == "__main__":
     main()
