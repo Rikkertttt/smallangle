@@ -7,6 +7,7 @@ from numpy import pi
 # Define the main Click group
 @click.group()
 def main():
+    """Main function"""
     pass
 
 
